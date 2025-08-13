@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Learning Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">Programming Progress Dashboard</h1>
+                <div class="theme-toggle">
+                    <span class="material-icons">brightness_4</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="material-icons">brightness_7</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Add New Language Section -->
+            <section class="add-language-section card">
+                <h2>Add New Language</h2>
+                <form id="add-language-form" class="language-form">
+                    <div class="form-group">
+                        <input type="text" id="language-name" placeholder="Language Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="language-icon" placeholder="Icon URL (optional)">
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <span class="material-icons">add</span> Add Language
+                    </button>
+                </form>
+            </section>
+
+            <!-- Languages Grid -->
+            <section class="languages-grid" id="languages-container">
+                <!-- Languages will be dynamically inserted here -->
+            </section>
+
+            <!-- Language Details Modal -->
+            <div class="modal" id="language-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-header">
+                        <img id="modal-language-icon" src="" alt="">
+                        <h2 id="modal-language-name"></h2>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="modal-progress-fill"></div>
+                            </div>
+                            <span id="modal-progress-text">0%</span>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sections-container" id="sections-container">
+                            <!-- Sections and subsections will be dynamically inserted here -->
+                        </div>
+                        <form id="add-section-form" class="section-form">
+                            <div class="form-group">
+                                <input type="text" id="section-title" placeholder="Section Title" required>
+                            </div>
+                            <button type="submit" class="btn-secondary">
+                                <span class="material-icons">add</span> Add Section
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
